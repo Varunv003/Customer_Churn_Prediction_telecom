@@ -2,7 +2,9 @@ import pickle
 import streamlit as st
 import pandas as pd
 from PIL import Image
-model_file = 'models\model_C=1.0.bin'
+import os
+
+model_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'models','model_C=1.0.bin')
 
 with open(model_file, 'rb') as f_in:
     dv, model = pickle.load(f_in)
